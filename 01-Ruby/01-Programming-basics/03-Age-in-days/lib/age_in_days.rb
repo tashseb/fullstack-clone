@@ -9,5 +9,5 @@ def age_in_days(day, month, year)
 
   age = today.year - birthdate.year
 
-  birthdatem today, age
+  age * 365
 end
