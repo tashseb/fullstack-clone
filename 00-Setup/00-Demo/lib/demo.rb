@@ -1,9 +1,9 @@
 def circle_area(radius)
+  result = 0
   if radius.negative?
-    return 0
+    result
   else
-    return 3.14 * radius * radius
+    result = 3.14 * radius * radius
   end
+  return result
 end
-
-puts circle_area(5)
