@@ -11,6 +11,11 @@ end
 def belongs_to?(a_string, a_word)
   # TODO: return true if a_string contains a_word
   # example: belongs_to?("hey jude", "jude") => true
+  if setString.split.include?(check)
+    return true
+  else
+    return false
+  end
 end
 
 def replace(initial_string, old_letter, new_letter)
