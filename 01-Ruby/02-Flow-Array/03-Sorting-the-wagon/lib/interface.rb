@@ -17,7 +17,7 @@ student_in_wagon.pop
 #       file and display the sorted student list
 list_students = wagon_sort(student_in_wagon)
 student_population = list_students.count
-removed_specials = list_students.each { |value| value.gsub!(/[^0-9A-Za-z]/, "")}
+removed_specials = list_students.each { |value| value.gsub!(/[^0-9A-Za-z]/, "") }
 last_student = list_students[-1]
 if student_population > 1
   proper_students = removed_specials.join(", ")
