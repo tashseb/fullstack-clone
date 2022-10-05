@@ -6,13 +6,16 @@ def fizz_buzz(number)
 
   while i <= number
     text = ""
-    text += "Fizz" if i % 3.zero?
-    text += "Buzz" if i % 5.zero?
-    text = i if text.empty?
-
-    result.push(text)
+    text += "Fizz" if i % 3 == 0
+    text += "Buzz" if i % 5 == 0
+    if text.empty?
+      result << i
+    else
+      result << text
+    end
     i += 1
   end
+
   raise ArgumentError, "Argument must be greater than one" unless @number > 1
 
   return result
