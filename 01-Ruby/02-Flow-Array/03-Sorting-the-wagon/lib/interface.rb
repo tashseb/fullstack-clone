@@ -21,11 +21,12 @@ removed_specials = list_students.each { |value| value.gsub!(/[^0-9A-Za-z]/, "")}
 last_student = list_students[-1]
 if student_population > 1
   proper_students = removed_specials.join(", ")
-  final_list = proper_students.gsub(last_student, "and #{last_student}")
+  final_list = proper_students.sub(", #{last_student}", " and #{last_student}")
 else
   proper_students = removed_specials.join(" ")
   final_list = proper_students
 end
 
 
-puts "Congratulations! Your wagon has #{student_population} students: #{final_list}"
+puts "Congratulations! Your wagon has #{student_population} students:"
+puts final_list
