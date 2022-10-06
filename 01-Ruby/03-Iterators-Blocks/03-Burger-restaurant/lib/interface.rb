@@ -14,7 +14,7 @@ burger(patty, sauce, topping)
 
 puts "💬 I'd like a burger with a bigger portion of fish, plus mayo and salad please."
 # TODO: to upgrade a portion to a bigger one, transform the fish to uppercase
-bigger_burger = burger(patty.upcase, sauce, topping)
+bigger_burger = burger(patty, sauce, topping)
 
 
 puts "💬 I'd like a juicy steak with barbecue sauce and cheddar please."
