@@ -9,12 +9,12 @@
 
 def are_identical_symbols_same_objects?
   # TODO: Answer the question by making this method to return true or false
-  :foo.object_id == :foo.object_id
+  :foo.object_id.equal?(:foo.object_id)
 end
 
 def are_identical_strings_same_objects?
   # TODO: Answer the question by making this method to return true or false
-  "foo".object_id == "foo".object_id
+  "foo".object_id.equal?("foo".object_id)
 end
 
 
@@ -34,7 +34,7 @@ end
 
 def me
   # TODO: return a Hash representing yourself, with keys such as age and name
-  { name: "Tash", age: 32}
+  { name: "Tash", age: 32 }
 end
 
 def fruits
