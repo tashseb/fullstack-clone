@@ -22,7 +22,6 @@ end
 def calories_counter(orders)
   # TODO: return number of calories for a less constrained order
   total_calories = 0
-  # counter = 0
   orders.each do |order|
     if MEALS.key?(order)
       meal_items = MEALS[order]
