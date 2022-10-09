@@ -7,11 +7,7 @@ def get_rid_of_surrounding_whitespaces(a_string)
 end
 
 def belongs_to?(a_string, a_word)
-  if a_string.split.include?(a_word)
-    return true
-  else
-    return false
-  end
+  a_string.split.include?(a_word)
 end
 
 def replace(initial_string, old_letter, new_letter)
