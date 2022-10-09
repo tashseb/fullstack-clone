@@ -7,7 +7,5 @@ def age_in_days(day, month, year)
   birthdate = Date.new(year, month, day)
   today = Date.today
 
-  age = today.year - birthdate.year
-
-  age * 365
+  (today.year - birthdate.year) * 365
 end
