@@ -1,6 +1,5 @@
 require_relative 'scraper'
 require 'csv'
-# TODO: you can build your christmas list program here!
 
 file_path = 'gifts.csv'
 

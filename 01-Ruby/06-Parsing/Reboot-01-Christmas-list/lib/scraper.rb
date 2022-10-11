@@ -13,5 +13,5 @@ require 'open-uri'
     gift = element.text.strip.split.first(5).join(' ')
     etsy_list[gift] = false
   end
-  etsy_list
+  return etsy_list
 end
