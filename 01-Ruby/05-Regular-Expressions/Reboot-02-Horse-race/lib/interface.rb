@@ -2,8 +2,8 @@
 horses = ['lucky coder', 'big time', 'fast rabbit', 'crazy diamond', 'sho']
 
 result = "Y"
-balance = 100
-until result =~ /n/i
+balance = 50
+until result =~ /n/i || balance <= 10
   winner = horses.sample
   horses.each_with_index { |horse, index| puts "#{index + 1}. #{horse}" }
   puts "Please select the number of your chosen horse:"
@@ -19,7 +19,7 @@ until result =~ /n/i
     balance -= 10
     puts "Sorry, you lose. You chose: #{choice_horse}"
   end
-  if balance.zero?
+  if balance <= 10
     puts "Sorry, you don't have enough balance to make another bet!"
   else
     puts "Your balance is #{balance}"
