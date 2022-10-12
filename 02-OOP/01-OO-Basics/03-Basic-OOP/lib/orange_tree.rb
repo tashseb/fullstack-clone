@@ -11,21 +11,33 @@ class OrangeTree
   end
 
   def one_year_passes!
-    @age += 1 if @age < 100
-    @dead = true if @age >= 51
-    @height += 1 if @age <= 10
-
-    if @age >= 6 && @age <= 9
-      @fruits = 100
-    elsif @age >= 10 && @age < 15
-      @fruits = 200
-    else
-      @fruits = 0
-    end
+    grow!
+    may_die!
+    produce_fruits!
   end
 
   def dead?
     @dead
+  end
+
+  def grow!
+    @age += 1 if @age < 100
+    @height += 1 if @age <= 10
+  end
+
+  def may_die!
+    @dead = true if @age >= 51
+  end
+
+  def produce_fruits!
+    if @age.between?(6, 9)
+      @fruits = 100
+    elsif @age.between?(10, 14)
+      @fruits = 200
+    else
+      @fruits = 0
+    end
+    @fruits
   end
 
   def pick_a_fruit!
