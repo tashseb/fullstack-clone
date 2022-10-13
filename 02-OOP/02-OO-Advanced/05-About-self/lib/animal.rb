@@ -1,22 +1,29 @@
 class Animal
+  # attr_reader :color, :natural_habitat, :species
+
   def name(name)
     @name = name
     # TODO: what should this method return?
+    self
   end
 
   def species(species)
     @species = species
     # TODO: what should this method return?
+    # natural_habitat
+    self
   end
 
   def color(color)
     @color = color
     # TODO: what should this method return?
+    self
   end
 
   def natural_habitat(natural_habitat)
     @natural_habitat = natural_habitat
     # TODO: what should this method return?
+    self
   end
 
   def to_s
