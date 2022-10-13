@@ -8,7 +8,6 @@ class Restaurant
     @name = name
     @average = []
   end
-
   # TODO: implement .filter_by_city and #rate methods
 
   def rate(new_rate)
