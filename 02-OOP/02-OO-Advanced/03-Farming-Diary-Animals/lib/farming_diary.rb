@@ -32,3 +32,15 @@ puts "The male chicken produced #{male_chicken.feed!} eggs"
 
 # DO NOT remove the line below, written for display purpose
 Board.new.display
+
+
+
+
+class Customer
+  attr_reader :name, :age, :gender
+  def initialize(name, age, gender)
+    @name = name
+    @age = age
+    @gender = gender
+  end
+end
