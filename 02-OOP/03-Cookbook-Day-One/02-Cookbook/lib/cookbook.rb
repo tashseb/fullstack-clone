@@ -1,24 +1,40 @@
 require "csv"
 
-filepath = "/Users/tashikacruz/code/tashseb/fullstack-challenges/02-OOP/03-Cookbook-Day-One/02-Cookbook/lib/"
-
-csv_file_path = CSV.foreach(filepath) { |row| "#{row[0]} #{row[1]}"}
-
+# # From a file: all at once
+# arr_of_rows = CSV.read("path/to/file.csv", **options)
+# # iterator-style:
+# CSV.foreach("path/to/file.csv", **options) do |row|
+#   # ...
+# end
 class Cookbook
-
-  def initialize(csv_file_path = [])
-    @recipe = csv_file_path
+  def initialize(csv_file_path)
+    @csv_file_path = csv_file_path
+    @recipes = []
+    CSV.foreach(csv_file_path) do |recipe|
+      recipe = Recipe.new(recipe[0], recipe[1])
+      @recipes << recipe
+    end
   end
 
   def all
-    @recipe
+    @recipes
   end
 
   def add_recipe(recipe)
-    @recipe << recipe
+    @recipes << recipe
+    CSV.open(@csv_file_path, 'wb') do |csv|
+      @recipes.each do |recipe|
+        csv << [recipe.name, recipe.description]
+      end
+    end
   end
 
   def remove_recipe(recipe_index)
-    @recipe.delete_at(recipe_index)
+    @recipes.delete_at(recipe_index)
+    CSV.open(@csv_file_path, 'wb') do |csv|
+      @recipes.each do |recipe|
+        csv << [recipe.name, recipe.description]
+      end
+    end
   end
 end
