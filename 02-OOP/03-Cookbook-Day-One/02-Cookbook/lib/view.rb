@@ -1,7 +1,7 @@
 class View
   def display_list(recipe)
-    recipe.each do |recipe|
-      puts "(/.*(#{recipe.name}).*/"
+    recipe.each do |dish|
+      puts "(/.*(#{dish.name}).*/"
     end
   end
 

@@ -1,11 +1,5 @@
 require "csv"
 
-# # From a file: all at once
-# arr_of_rows = CSV.read("path/to/file.csv", **options)
-# # iterator-style:
-# CSV.foreach("path/to/file.csv", **options) do |row|
-#   # ...
-# end
 class Cookbook
   def initialize(csv_file_path)
     @csv_file_path = csv_file_path
@@ -23,8 +17,8 @@ class Cookbook
   def add_recipe(recipe)
     @recipes << recipe
     CSV.open(@csv_file_path, 'wb') do |csv|
-      @recipes.each do |recipe|
-        csv << [recipe.name, recipe.description]
+      @recipes.each do |dish|
+        csv << [dish.name, dish.description]
       end
     end
   end

@@ -1,6 +1,6 @@
-require_relative 'cookbook' #repository
-require_relative 'recipe' #model
-require_relative 'view'  #view
+require_relative 'cookbook'
+require_relative 'recipe'
+require_relative 'view'
 
 class Controller
   def initialize(cookbook)
