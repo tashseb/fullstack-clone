@@ -40,8 +40,7 @@ class Controller
 
   def done
     display_recipes
-    index = @view.ask_mark_recipe
-    @cookbook.marked_recipe(index)
+    @cookbook.marked_recipe(@view.ask_mark_recipe)
   end
 
   def create_recipe(name, decription, rating, prep_time)
@@ -52,7 +51,6 @@ class Controller
   private
 
   def display_recipes
-    recipes = @cookbook.all
-    @view.display_list(recipes)
+    @view.display_list(@cookbook.all)
   end
 end
