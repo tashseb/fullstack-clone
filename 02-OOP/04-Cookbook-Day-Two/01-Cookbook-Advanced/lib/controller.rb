@@ -1,6 +1,7 @@
 require_relative 'cookbook'
 require_relative 'recipe'
 require_relative 'view'
+require_relative 'scrape_allrecipes_services'
 require "nokogiri"
 require "open-uri"
 
@@ -17,7 +18,9 @@ class Controller
   def create
     recipe_name = @view.add_new_dish
     recipe_descp = @view.add_new_description
-    create_recipe(recipe_name, recipe_descp)
+    recipe_rating = @view.add_rating
+    recipe_prep = @view.add_prep_time
+    create_recipe(recipe_name, recipe_descp, recipe_rating, recipe_prep)
     display_recipes
   end
 
@@ -28,28 +31,21 @@ class Controller
   end
 
   def search
-    # file = "banana.html"
-    # doc = Nokogiri::HTML(File.open(file), nil, "utf-8")
     search_ingredient = @view.ask_ingredient_to_find
-    html_content = URI.open("https://www.allrecipes.com/search?q=#{search_ingredient}", "User-Agent" => "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:89.0) Gecko/20100101 Firefox/89.0").read
-    doc = Nokogiri::HTML(html_content)
-    recipe = []
-
-    doc.search(".card__content .card__title").first(5).map do |element|
-      recipe << element.text.strip
-    end
-    import_recipe(recipe)
+    scraped_recipe = ScrapeAllrecipesServices.new(search_ingredient).call
+    @view.display_list(scraped_recipe)
+    index = @view.ask_recipe_to_import
+    @cookbook.add_recipe(scraped_recipe[index])
   end
 
-  def import_recipe(search_result)
-    @view.display_result(search_result)
-    import_result = @view.ask_recipe_to_import
-    create_recipe(search_result[import_result], "")
-    display_list
+  def done
+    display_recipes
+    index = @view.ask_mark_recipe
+    @cookbook.marked_recipe(index)
   end
 
-  def create_recipe(name, decription)
-    new_recipe = Recipe.new(name, decription)
+  def create_recipe(name, decription, rating, prep_time)
+    new_recipe = Recipe.new(name, decription, rating, prep_time)
     @cookbook.add_recipe(new_recipe)
   end
 
