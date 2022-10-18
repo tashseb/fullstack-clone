@@ -1,7 +1,7 @@
 class Router
-  def initialize(meals_controller)
+  def initialize(meals_controller, customers_controller)
     @meals_controller = meals_controller
-    # @customers_controller = customers_controller
+    @customers_controller = customers_controller
     @running = true
   end
 
@@ -21,11 +21,12 @@ class Router
     when 1 then @meals_controller.list
     when 2 then @meals_controller.add
     when 3 then @meals_controller.find
-    when 4 then @customers_controller.list_customer
-    when 5 then @customers_controller.add_customer
-    when 6 then stop
+    when 4 then @customers_controller.list
+    when 5 then @customers_controller.add
+    when 6 then @customers_controller.find
+    when 7 then stop
     else
-      puts "Please select 1, 2, 3, 4, 5 or 6"
+      puts "Please select 1, 2, 3, 4, 5, 6 or 7"
     end
   end
 
@@ -41,6 +42,7 @@ class Router
     puts "3. Find a meal by meal_id"
     puts "4. List all customers"
     puts "5. Add new customer"
-    puts "6. Exit"
+    puts "6. Find customer by ID"
+    puts "7. Exit"
   end
 end

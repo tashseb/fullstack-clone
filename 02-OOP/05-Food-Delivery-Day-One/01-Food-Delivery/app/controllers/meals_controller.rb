@@ -3,7 +3,6 @@ require_relative '../models/meal'
 require_relative '../repositories/meal_repository'
 
 class MealsController
-
   def initialize(meal_repository)
     @meal_repository = meal_repository
     @meals_view = MealsView.new

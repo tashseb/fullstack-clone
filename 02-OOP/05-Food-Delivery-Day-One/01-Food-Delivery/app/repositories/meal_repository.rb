@@ -1,6 +1,5 @@
 require 'csv'
 class MealRepository
-  #pass customer_repository(csv_file_path, customer_repository)
   def initialize(csv_file_path)
     @csv_file_path = csv_file_path
     @meals = []
@@ -28,13 +27,12 @@ class MealRepository
   private
 
   def loaded_meals
-    CSV.foreach(@csv_file_path, headers: :first_row,
-      header_converters: :symbol) do |attributes|
-        attributes[:id] = attributes[:id].to_i
-        attributes[:price] = attributes[:price].to_i
-        # need to turn customer_id into an instance of customer
-        # @customer_repository
-        @meals << Meal.new(attributes)
+    CSV.foreach(@csv_file_path, headers: :first_row, header_converters: :symbol) do |attributes|
+      attributes[:id] = attributes[:id].to_i
+      attributes[:price] = attributes[:price].to_i
+      # need to turn customer_id into an instance of customer
+      # @customer_repository
+      @meals << Meal.new(attributes)
     end
     @next_id = @meals.any? ? @meals.last.id + 1 : 1
   end

@@ -1,5 +1,4 @@
 class MealsView
-
   def display_meal(meal)
     meal.each_with_index do |attribute, index|
       puts "#{index + 1}.)-> ID: #{attribute.id} #{attribute.name} $#{attribute.price} "
