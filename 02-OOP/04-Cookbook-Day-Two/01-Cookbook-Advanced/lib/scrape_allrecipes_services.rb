@@ -20,11 +20,13 @@ class ScrapeAllrecipesServices
 
     doc.search(".standard-card-new").first(5).map do |card|
       name = card.search('.standard-card-new__article-title').text.strip
-      recipe_hash = info_hash.find do |recipe_hash|
+      info_hash.find do |recipe_hash|
        if recipe_hash['title'] == name
+        title = recipe_hash['title']
+        descp = recipe_hash['description']
         user_rating = recipe_hash['userRatings']['starRatingAverage']
         time = recipe_hash['totalTimeArray']['totalTimeHumanReadable']
-        recipe << Recipe.new(recipe_hash['title'], recipe_hash['description'], user_rating, time)
+        recipe << Recipe.new(title, descp, user_rating, time)
        end
       end
     end
