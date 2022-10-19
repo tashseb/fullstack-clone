@@ -25,5 +25,4 @@ class Order
   def deliver!
     @delivered = true
   end
-
 end

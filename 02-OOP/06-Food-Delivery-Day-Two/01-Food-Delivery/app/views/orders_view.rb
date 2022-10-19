@@ -11,8 +11,12 @@ class OrdersView < BaseView
   end
 
   def display_undelivered(orders)
-    orders.each_with_index do |attribute, index|
-      puts "#{index + 1} #{attribute.meal.name}. Customer: #{attribute.customer.name} Rider: #{attribute.employee.username}"
+    if orders.any?
+      orders.each_with_index do |attribute, index|
+        puts "#{index + 1} #{attribute.meal.name}. Customer: #{attribute.customer.name} Rider: #{attribute.employee.username}"
+      end
+    else
+      puts "No orders available."
     end
   end
 

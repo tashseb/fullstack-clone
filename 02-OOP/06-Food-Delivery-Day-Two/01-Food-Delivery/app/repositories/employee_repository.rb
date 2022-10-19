@@ -37,6 +37,3 @@ class EmployeeRepository
     end
   end
 end
-
-# repo = EmployeeRepository.new("/Users/tashikacruz/code/tashseb/fullstack-challenges/02-OOP/06-Food-Delivery-Day-Two/01-Food-Delivery/data/employees.csv")
-# p repo.all_riders

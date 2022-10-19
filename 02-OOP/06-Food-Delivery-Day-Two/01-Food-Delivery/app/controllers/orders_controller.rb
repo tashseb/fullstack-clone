@@ -18,18 +18,30 @@ class OrdersController
   end
 
   def add
-    p @meals_controller.list
-    meal_index = @view.ask_for('Meal number').to_i - 1
-    @customers_controller.list
-    customer_index = @view.ask_for('Customer number').to_i - 1
-    @employees_controller.list
-    employee_index = @view.ask_for('Employee number').to_i - 1
+    meal_index
+    customer_index
+    employee_index
     meal = @meal_repository.all[meal_index]
     customer = @customer_repository.all[customer_index]
     employee = @employee_repository.all_riders[employee_index]
     order = Order.new(meal: meal, customer: customer, employee: employee)
     @order_repository.create(order)
     list_undelivered_orders
+  end
+
+  def meal_index
+    @meals_controller.list
+    @view.ask_for('Meal number').to_i - 1
+  end
+
+  def customer_index
+    @customers_controller.list
+    @view.ask_for('Customer number').to_i - 1
+  end
+
+  def employee_index
+    @employees_controller.list
+    @view.ask_for('Employee number').to_i - 1
   end
 
   def list_my_orders(employee)

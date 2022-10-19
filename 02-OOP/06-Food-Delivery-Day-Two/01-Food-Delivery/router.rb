@@ -9,7 +9,6 @@ class Router
 
   def run
     puts "Welcome to Food Delivery!"
-    puts "           --           "
     while @running
       @employee = @sessions_controller.login
       while @employee

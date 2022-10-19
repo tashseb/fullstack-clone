@@ -9,7 +9,6 @@ class SessionsController
   def login
     username = @sessions_view.ask_for('username')
     password = @sessions_view.ask_for('password')
-    @employee_repository.all
     employee = @employee_repository.find_by_username(username) # instance
 
     if employee && employee.password == password

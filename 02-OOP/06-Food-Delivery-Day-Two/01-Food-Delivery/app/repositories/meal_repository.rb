@@ -1,8 +1,6 @@
 require 'csv'
-require_relative 'base_repository'
 require_relative '../models/meal'
-class MealRepository #< BaseRepository
-
+class MealRepository
   def initialize(csv_file_path)
     @csv_file_path = csv_file_path
     @meals = []
@@ -52,8 +50,3 @@ class MealRepository #< BaseRepository
     end
   end
 end
-
-
-
-# check = MealRepository.new('/Users/tashikacruz/code/tashseb/fullstack-challenges/02-OOP/05-Food-Delivery-Day-One/01-Food-Delivery/data/meals.csv')
-# p check.loaded_records
