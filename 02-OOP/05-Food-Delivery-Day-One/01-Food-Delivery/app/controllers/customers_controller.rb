@@ -13,7 +13,8 @@ class CustomersController
   end
 
   def find
-    @customer_repository.find_by_id(@customers_view.find_customer_by_id)
+    display_list
+    @customer_repository.find(@customers_view.find_customer_by_id)
   end
 
   def add

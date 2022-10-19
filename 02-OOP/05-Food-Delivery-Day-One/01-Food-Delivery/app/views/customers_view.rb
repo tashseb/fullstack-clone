@@ -1,7 +1,7 @@
 class CustomersView
   def display_customer(customers)
     customers.each_with_index do |attribute, index|
-      puts "#{index + 1}.)-> ID: #{attribute.id} #{attribute.name} $#{attribute.address} "
+      puts "#{index + 1}.)-> ID: #{attribute.id} #{attribute.name} lives at #{attribute.address} "
     end
   end
 

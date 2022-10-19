@@ -1,20 +1,26 @@
 require 'csv'
-class MealRepository
+require_relative 'base_repository'
+require_relative '../models/meal'
+class MealRepository #< BaseRepository
+
   def initialize(csv_file_path)
     @csv_file_path = csv_file_path
     @meals = []
     @next_id = 1
     loaded_meals if File.exist?(@csv_file_path)
   end
+  # def build_record(attributes)
+  #   attributes[:id] = attributes[:id].to_i
+  #   attributes[:price] = attributes[:price].to_i
+  #   @elements << Meal.new(attributes)
+  # end
 
   def all
     @meals
   end
 
   def find(meal_id)
-    meal_found = nil
-    @meals.each { |dish| meal_found = dish if dish.id == meal_id }
-    meal_found
+    @meals.find { |dish| dish if dish.id == meal_id }
   end
 
   def create(meal)
@@ -39,10 +45,15 @@ class MealRepository
 
   def save_meal
     CSV.open(@csv_file_path, 'wb') do |csv|
-      csv << ['id', 'name', 'price']
+      csv << Meal.header
       @meals.each do |meal|
-        csv << [meal.id, meal.name, meal.price]
+        csv << meal.build_row
       end
     end
   end
 end
+
+
+
+# check = MealRepository.new('/Users/tashikacruz/code/tashseb/fullstack-challenges/02-OOP/05-Food-Delivery-Day-One/01-Food-Delivery/data/meals.csv')
+# p check.loaded_records
