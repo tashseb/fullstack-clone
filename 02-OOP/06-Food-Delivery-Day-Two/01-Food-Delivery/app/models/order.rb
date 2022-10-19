@@ -15,7 +15,6 @@ class Order
   end
 
   def build_row
-    p meal
     [id, delivered, meal.id, customer.id, employee.id]
   end
 

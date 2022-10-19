@@ -7,14 +7,11 @@ class SessionsController
   end
 
   def login
-    # the view should ask user for username
     username = @sessions_view.ask_for('username')
-    # the view should ask user for password
     password = @sessions_view.ask_for('password')
-    # we need to find an instance of an employee from the repo w/the username
     @employee_repository.all
     employee = @employee_repository.find_by_username(username) # instance
-    # check to see if the password matches the username
+
     if employee && employee.password == password
       @sessions_view.welcome(employee)
       employee

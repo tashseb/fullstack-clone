@@ -28,6 +28,6 @@ class MealsController
   private
 
   def display_list
-    @meals_view.display_meal(@meal_repository.all)
+    @meals_view.display_meals(@meal_repository.all)
   end
 end

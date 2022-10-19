@@ -18,7 +18,7 @@ class OrdersController
   end
 
   def add
-    @meals_controller.list
+    p @meals_controller.list
     meal_index = @view.ask_for('Meal number').to_i - 1
     @customers_controller.list
     customer_index = @view.ask_for('Customer number').to_i - 1
