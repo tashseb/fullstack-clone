@@ -45,10 +45,10 @@
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
-<row name="First_name" null="0" autoincrement="0">
+<row name="first_name" null="0" autoincrement="0">
 <datatype>TEXT(25)</datatype>
 <default>'NULL'</default></row>
-<row name="Last_name" null="0" autoincrement="0">
+<row name="last_name" null="0" autoincrement="0">
 <datatype>VARCHAR(50)</datatype>
 <default>'NULL'</default></row>
 <row name="email" null="0" autoincrement="0">
