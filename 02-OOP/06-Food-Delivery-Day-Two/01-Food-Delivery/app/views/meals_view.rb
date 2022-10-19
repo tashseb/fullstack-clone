@@ -1,8 +1,8 @@
 require_relative 'base_view'
 class MealsView < BaseView
-  def display_meal(meal)
-    meal.each_with_index do |attribute, index|
-      puts "#{index + 1}.)-> ID: #{attribute.id} #{attribute.name} $#{attribute.price} "
+  def display_meals(meals)
+    meals.each_with_index do |meal, index|
+      puts "#{index + 1}.)-> ID: #{meal.id} #{meal.name} $#{meal.price} "
     end
   end
 

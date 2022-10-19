@@ -43,5 +43,5 @@ class CustomerRepository
   end
 end
 
-check = CustomerRepository.new('/Users/tashikacruz/code/tashseb/fullstack-challenges/02-OOP/05-Food-Delivery-Day-One/01-Food-Delivery/data/customers.csv')
-p check.loaded_customers
+# check = CustomerRepository.new('/Users/tashikacruz/code/tashseb/fullstack-challenges/02-OOP/05-Food-Delivery-Day-One/01-Food-Delivery/data/customers.csv')
+# p check.loaded_customers
