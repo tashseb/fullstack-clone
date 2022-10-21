@@ -21,6 +21,7 @@ class Router
     when 3 then @controller.update
     when 4 then @controller.destroy
     when 5 then @controller.upvote
+    when 6 then return
     end
   end
 
@@ -30,7 +31,8 @@ class Router
       "Add a post",
       "Edit a post title & url",
       "Delete a post",
-      "Vote for a post"
+      "Vote for a post",
+      "Exit"
     ]
   end
 
