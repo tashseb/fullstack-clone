@@ -21,10 +21,38 @@ end
 get '/' do
   # TODO
   # 1. fetch posts from database.
+  @posts = Post.descending_order
+  # @post.descending_order
   # 2. Store these posts in an instance variable
   # 3. Use it in the `app/views/posts.erb` view
 
   erb :posts # Do not remove this line
 end
 
+get '/vote/:id' do
+  id = params[:id]
+  @post = Post.find(id)
+  @post.votes += 1
+  @post.save!
+
+  erb :show
+end
+
+get '/posts/:id' do
+  id = params[:id]
+  @post = Post.find(id)
+
+  erb :show
+end
+
 # TODO: add more routes to your app!
+post '/posts' do
+  title = params[:title]
+  url = params[:url]
+
+
+  post = Post.new(title: title, url: url, user_id: 1)
+  post.save!
+
+  redirect "/posts/#{post.id}"
+end

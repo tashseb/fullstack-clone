@@ -1,3 +1,24 @@
-<h1>Hacker News</h1>
+<style>
+  form {
+    display: inline-block;
+    padding: 20px;
+  }
+</style>
 
-# TODO: list posts here. You can use instance variables set in the controller (app.rb)
+<h1>Hacker News</h1>
+<h2>Submit new post</h2>
+<form action="/posts" method="post">
+  <label for="title">Title
+    <input type="text" name="title">
+  </label>
+  <label for="url">Url
+    <input type="text" name="url">
+  </label>
+  <input type="submit" value="Add Post">
+</form>
+<h3>List of posts</h3>
+<ul>
+  <% @posts.each do |post| %>
+    <li><a href="/posts/<%= post.id %>" target="_blank"><%= post.title %></a> - <%= post.votes %></li>
+  <% end%>
+</ul>
