@@ -5,7 +5,8 @@ require "better_errors"
 
 configure :development do
   use BetterErrors::Middleware
-  BetterErrors.application_root = File.expand_path('..', __FILE__)
+  BetterErrors.application_root = File.expand_path(__dir__)
+  # ('..', __FILE__)
 end
 
 require_relative "../config/application"
