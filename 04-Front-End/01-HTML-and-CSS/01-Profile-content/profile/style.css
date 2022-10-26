@@ -1,0 +1,13 @@
+img{
+  width: 100px;
+}
+
+.img-circle {
+  border-radius: 50%;
+}
+
+div {
+  width: 500px;
+  margin: 0 auto;
+  text-align: center;
+}
