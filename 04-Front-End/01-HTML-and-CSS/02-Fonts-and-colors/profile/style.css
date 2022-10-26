@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Figtree&family=Noto+Serif+JP&display=swap');
+
+h1, h2 {
+  font-family: 'Figtree', sans-serif;
+  color: #40403d;
+}
+
+p {
+  font-family: 'Noto Serif JP', serif;
+}
+
+img{
+  width: 100px;
+}
+
+.img-circle {
+  border-radius: 10%;
+}
+
+div {
+  width: 500px;
+  margin: 0 auto;
+  text-align: center;
+}
