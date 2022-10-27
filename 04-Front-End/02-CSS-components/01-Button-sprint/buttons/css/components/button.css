@@ -1,1 +1,54 @@
 /* Your button CSS file */
+
+.btn-medium {
+  color: lightgrey;
+  border: 1px solid lightgrey;
+  border-radius: 64px;
+  padding: 18px 28px 18px 28px;
+  font-size: 20px;
+  font-weight: lighter;
+}
+ .btn-medium:hover {
+  color:  grey;
+  border: 1px solid grey;
+ }
+
+.btn-treehouse {
+  color: white;
+  background-color: #6ad58b;
+  border-radius: 4px;
+  padding: 18px 28px 18px 28px;
+  font-size: 20px;
+  font-weight: bolder;
+}
+
+.btn-treehouse:hover {
+  background-color:  green;
+  color: white;
+  transition: 0.1s;
+ }
+
+.btn-yours {
+  font-family: 'Lato', sans-serif;
+  color: #ff7f82;
+  border: 2px solid #ff7f82;
+  padding: 20px;
+  transition: 0.30s;
+}
+
+.btn-your:hover,
+.btn-yours:focus {
+  box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+  transform: translateY(-0.25em);
+}
+
+$colors: (
+  btn-yours: #ffa260
+);
+
+@each $color in $colors {
+  .#{$button} {
+    --color: #{$color};
+    --hover: #{adjust-hue($color, 45deg)};
+  }
+}
