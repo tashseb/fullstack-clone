@@ -3,6 +3,10 @@
 
 /* Fontawesome */
 @import url('https://use.fontawesome.com/releases/v6.1.2/css/all.css');
+@import url("components/banner.css");
+@import url("components/btn.css");
+@import url("components/cards.css");
+@import url("components/footer.css");
 
 /* Utilities */
 body {
@@ -19,4 +23,3 @@ a {
 }
 
 /* Custom design below! */
-

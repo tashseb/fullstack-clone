@@ -1,0 +1,42 @@
+.banner h1 {
+  margin: 0px;
+}
+
+.banner {
+  color: white;
+  height: 550px;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.banner h1 {
+  text-shadow: 1px 1px 2px black;
+  font-size: 28px;
+}
+
+.banner p {
+  margin-bottom: 32px;
+  opacity: 70%;
+  font-size: 18px;
+}
+
+.banner-info {
+  width: 800px;
+}
+
+
+@media (max-width: 800px) {
+  .banner-info {
+    width: 450px;
+  }
+}
+
+@media (max-width: 400px) {
+  .banner-info {
+    width: 300px;
+  }
+}
