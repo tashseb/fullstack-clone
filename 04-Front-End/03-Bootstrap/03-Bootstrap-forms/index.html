@@ -8,5 +8,50 @@
   </head>
   <body>
     <!-- Build your responsive signup form here -->
+    <div class="container p-3">
+      <div class="row p-3">
+        <div class="col-md-6">
+          <form>
+            <legend class="fs-2 fw-bold text-center mb-5">Create your account</legend>
+            <div class="d-flex gap-3 justify-content-between w-100">
+              <div class="col-6">
+                <div class="mb-3">
+                  <label for="exampleInputFName" class="form-label">Your first name</label>
+                  <input type="text" class="form-control" id="exampleInputFName" placeholder="Bob">
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="mb-3">
+                  <label for="exampleInputLName" class="form-label">Your last name</label>
+                  <input type="text" class="form-control" id="exampleInputLName" placeholder="Sponge">
+                </div>
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Email address</label>
+              <input type="email" class="form-control" id="exampleInputEmail1" placeholder="bob@gmail.com">
+              <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label">Password</label>
+              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="******">
+            </div>
+            <div class="mb-3">
+              <label class="form-label">How do you know us</label>
+              <select class="form-select" aria-label="Default select example">
+                <option value="1">Facebook</option>
+                <option value="2">Google search</option>
+                <option value="3">A friend</option>
+              </select>
+            </div>
+            <div class="d-grid gap-2">
+              <button type="submit" class="btn btn-primary">Sign Up</button>
+            <div class="d-grid gap-2"></div>
+          </form>
+        </div>
+      </div>
+
+    </div>
+
   </body>
 </html>
