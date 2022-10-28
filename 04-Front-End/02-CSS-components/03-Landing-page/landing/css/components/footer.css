@@ -12,16 +12,16 @@ ul {
   list-style-type: none;
 }
 
-.links ul {
+.footer-links ul {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.links li {
+.footer-links li {
   padding: 8px;
 }
 
-.links p {
+.footer-links p {
   text-align: center;
 }
