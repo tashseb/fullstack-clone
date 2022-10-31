@@ -5,6 +5,7 @@ const sumOfNegative = (numbers) => {
   numbers.forEach((num) => {
     if (num < 0) result += num;
   });
+  return result;
 };
 
 module.exports = sumOfNegative; // Do not remove.
