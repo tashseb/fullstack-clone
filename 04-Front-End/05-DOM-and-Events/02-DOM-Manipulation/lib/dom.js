@@ -29,13 +29,22 @@ module.exports = function runChallenges(check) {
   emailSpan.innerHTML = "<strong>This is my email now</strong>";
 
   // Ex 4. Add the .blue CSS class to the th elements
-
+  const table = document.querySelectorAll("th");
+  table.forEach((header) => {
+    header.classList.add("blue");
+  });
 
 
   // Ex 5. Count the number of table body rows there are
   //       Make the function teamCount() return it
   const teamCount = () => {
     // TODO: return the number of teams
+    const tds = document.querySelectorAll("tbody > tr");
+    let result = 0;
+    for (let i = 1; i <= tds.length; i += 1) {
+      result += 1;
+    }
+    return result;
   };
 
   // /!\ DO NOT CHANGE THIS LINE - TEST PURPOSES
