@@ -29,8 +29,8 @@ module.exports = function runChallenges(check) {
   emailSpan.innerHTML = "<strong>This is my email now</strong>";
 
   // Ex 4. Add the .blue CSS class to the th elements
-  const table = document.querySelectorAll("th");
-  table.forEach((header) => {
+  const th = document.querySelectorAll("th");
+  th.forEach((header) => {
     header.classList.add("blue");
   });
 
@@ -39,9 +39,9 @@ module.exports = function runChallenges(check) {
   //       Make the function teamCount() return it
   const teamCount = () => {
     // TODO: return the number of teams
-    const tds = document.querySelectorAll("tbody > tr");
+    const tbody = document.querySelectorAll("tbody > tr");
     let result = 0;
-    for (let i = 1; i <= tds.length; i += 1) {
+    for (let i = 1; i <= tbody.length; i += 1) {
       result += 1;
     }
     return result;
@@ -52,6 +52,15 @@ module.exports = function runChallenges(check) {
 
   // Ex 6. Say there is a 15th team added to the table.
   //       Add a row at the bottom, this new team should have zero points.
+  const tr = document.querySelector("tbody");
+  tr.insertAdjacentHTML(
+    "beforeend",
+    `<tr>
+      <td>15</td>
+      <td>Team Fanta</td>
+      <td>0</td>
+    </tr>`
+  );
 
 
 
@@ -59,15 +68,24 @@ module.exports = function runChallenges(check) {
   //       Make the function summarizePoints() return it
   const summarizePoints = () => {
     // TODO: return the sum
+    const trPoints = document.querySelectorAll("tr td:last-child");
+    let sum = 0;
+    for (let i = 0; i < trPoints.length; i += 1) {
+      sum += Number.parseInt(trPoints[i].innerHTML, 10);
+    }
+    return sum;
   };
 
 
   // Ex 8. Change the background color of all `<th>` cells to #DDF4FF
-
+  th.forEach((header) => {
+    header.style.backgroundColor = "#DDF4FF";
+  });
 
 
   // Ex 9. Remove the "Email:" label from the DOM
-
+  const removeEmailLabel = document.querySelector("label");
+  removeEmailLabel.remove();
 
 
 
