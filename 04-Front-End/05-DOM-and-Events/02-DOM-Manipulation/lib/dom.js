@@ -25,8 +25,8 @@ module.exports = function runChallenges(check) {
 
   // Ex 3. Replace the email hint (next to the input) with 'This is my email now'
   //       The text should be emphasized using a <strong> tag
-
-
+  const emailSpan = document.getElementById("email-hint");
+  emailSpan.innerHTML = "<strong>This is my email now</strong>";
 
   // Ex 4. Add the .blue CSS class to the th elements
 
