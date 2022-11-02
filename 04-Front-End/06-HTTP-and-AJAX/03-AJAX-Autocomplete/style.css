@@ -5,9 +5,15 @@ body {
   align-items: center;
 }
 
+ul {
+  list-style-type: none;
+}
+
 #container {
   height: 50vh;
   width: 50vh;
+  border: 2px solid black;
+  border-radius: 4px;
 }
 
 #container input {
