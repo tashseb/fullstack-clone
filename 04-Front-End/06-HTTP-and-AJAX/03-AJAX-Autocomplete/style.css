@@ -11,7 +11,7 @@ ul {
 
 #container {
   height: 50vh;
-  width: 50vh;
+  width: 100vh;
   border: 2px solid black;
   border-radius: 4px;
 }

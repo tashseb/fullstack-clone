@@ -15,23 +15,30 @@ function getTimeDifference(timeStamp) {
   return Math.round(timeElapsed / 60000);
 }
 
+const liLists = (data) => {
+  const messages = data.messages;
+  list.innerHTML = "";
+  messages.forEach((mes) => {
+  // 3. Change the DOM (display the movies in the list)
+    list.insertAdjacentHTML(
+      "beforeend",
+      `<li class='list-inline-item'>
+        ${mes.content} (posted <span class="date">${getTimeDifference(mes)} minute ago</span>) by ${mes.author}
+      </li>`
+    );
+  });
+};
+
 const refresh = () => {
   fetch(baseUrl)
     .then(response => response.json())
     .then((data) => {
-      const messages = data.messages;
-      list.innerHTML = "";
-      messages.forEach((mes) => {
-      // 3. Change the DOM (display the movies in the list)
-        list.insertAdjacentHTML(
-          "beforeend",
-          `<li class='list-inline-item'>
-          - ${mes.content} (posted ${getTimeDifference(mes)} minute ago) by ${mes.author}
-          </li>`
-        );
-      });
+      liLists(data);
     });
 };
+
+window.onload = refresh();
+
 // push new messages to server
 button.addEventListener("click", (event) => {
   event.preventDefault();
@@ -43,9 +50,3 @@ button.addEventListener("click", (event) => {
   });
   refresh();
 });
-
-// get all messages from server
-// refresh.addEventListener("click", (event) => {
-//   event.preventDefault();
-//   banana();
-// });
