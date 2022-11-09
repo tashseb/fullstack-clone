@@ -13,7 +13,7 @@ def generate_model_command
   # TODO: Return a `String` with the command you would run in the terminal to
   # generate a `Restaurant` model that has two fields: name(`String`) and
 
-  return 'rails generate restaurant name stars:integer'
+  return 'rails generate model restaurant name stars:integer'
 end
 
 def files_created_by_model_generator
